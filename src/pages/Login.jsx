@@ -5,11 +5,8 @@ import LoginForm from "../components/login-form";
 import SignUpForm from "../components/signup-form";
 
 const Login = () => {
-  const [isLogin, setIsLogin] = useState(true);
- 
-
-  // console.log(user);
   
+  const [isLogin, setIsLogin] = useState(true);
 
 
 
@@ -30,7 +27,7 @@ const Login = () => {
               your potential!"
             </p>
           </div>
-          {isLogin ? <LoginForm setIsLogin={setIsLogin} /> : <SignUpForm setIsLogin={setIsLogin} />}
+          {isLogin ? <LoginForm setIsLogin={setIsLogin}  /> : <SignUpForm setIsLogin={setIsLogin} />}
         </main>
       </div>
     </div>

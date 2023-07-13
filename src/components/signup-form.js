@@ -41,7 +41,7 @@ const SignUpForm = ({ setIsLogin }) => {
       const { message } = response.data;
 
       // Display a success message, show a notification, etc.
-
+      localStorage.setItem("user", JSON.stringify({ registerName, registerEmail }));
       // Redirect to the apply page
       window.location.href = "/apply";
     } catch (error) {

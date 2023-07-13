@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [user, setUser] = useState(null);
 
-  const storedUser = localStorage.getItem("user");
-  const parsedUser = storedUser ? JSON.parse(storedUser) : null;
+ 
   useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    const parsedUser = storedUser ? JSON.parse(storedUser) : null;
     setUser(parsedUser);
-  }, [parsedUser]);
+    
+  }, []);
 
+  console.log(user);
   const handleLogout = () => {
     setUser(null);
     localStorage.removeItem("user");
@@ -32,8 +35,8 @@ const Navbar = () => {
           {user ? (
             <div className="flex flex-row space-x-4">
               <div className="z-50 w-52 h-18 text-center py-3 my-4 bg-blue-200 rounded-lg shadow">
-                <div className="text-lg font-bold">{user.username}</div>
-                <div className="text-sm text-gray-500">{user.email}</div>
+                <div className="text-lg font-bold">{user.username || user.registerName}</div>
+                <div className="text-sm text-gray-500">{user.email || user.registerEmail}</div>
               </div>
               <button
                 className="z-50 w-40 h-12 text-center py-3 my-4 bg-blue-200 hover:bg-blue-500 rounded-lg shadow"

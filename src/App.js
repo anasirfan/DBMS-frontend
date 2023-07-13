@@ -5,9 +5,11 @@ import About from "./components/about";
 import Apply from "./components/apply";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
+import AddCandidate from "./components/addCandidate";
 
 
 function App() {
+  
   return (
     <Router>
       <Routes>
@@ -16,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/apply" element={<Apply />} />
+        <Route path="/add-candidate" element={<AddCandidate />} />
 
         
       </Routes>

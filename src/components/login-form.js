@@ -26,21 +26,22 @@ const LoginForm = ({
 
       // Find the user with the matching email
       const user = users.find((user) => user.email === loginEmail);
-      // console.log(user);
+      console.log(user);
 
       // Check if the user exists and the password matches
       if (user && user.password === loginPassword) {
-        const { username, email } = user;
+        const { username, email, role_id } = user;
+
       
-        localStorage.setItem("user", JSON.stringify({ username, email }));
+        localStorage.setItem("user", JSON.stringify({ username, email,role_id }));
         // Check the user role
         if (user.role_id === 1 || user.role_id === 2) {
           // Assuming the API returns a token and user object with username and email
-          const { token, username, email } = user;
+          const { username, email,role_id } = user;
 
           // Store the token and user object in local storage or any other preferred storage mechanism
           
-          localStorage.setItem("user", JSON.stringify({ username, email }));
+          localStorage.setItem("user", JSON.stringify({ username, email ,role_id}));
           
 
           // Redirect to the dashboard
